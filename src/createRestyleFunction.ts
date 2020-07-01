@@ -102,7 +102,8 @@ const createRestyleFunction = <
   Theme extends BaseTheme = BaseTheme,
   TProps extends Record<string, any> = Record<string, any>,
   P extends keyof TProps = keyof TProps,
-  K extends keyof Theme | undefined = undefined
+  K extends keyof Theme | undefined = undefined,
+  S extends string = string
 >({
   property,
   transform,

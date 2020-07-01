@@ -100,8 +100,6 @@ const textShadowProperties = {
   textShadowRadius: true,
 };
 
-const getKeys = <T>(object: T) => Object.keys(object) as (keyof T)[];
-
 export const backgroundColor = createRestyleFunction({
   property: 'backgroundColor',
   themeKey: 'colors',
