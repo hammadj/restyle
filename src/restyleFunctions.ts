@@ -19,6 +19,20 @@ const spacingProperties = {
   paddingLeft: true,
   paddingHorizontal: true,
   paddingVertical: true,
+  m: 'margin',
+  mt: 'marginTop',
+  mr: 'marginRight',
+  mb: 'marginBottom',
+  ml: 'marginLeft',
+  mx: 'marginHorizontal',
+  my: 'marginVertical',
+  p: 'padding',
+  pt: 'paddingTop',
+  pr: 'paddingRight',
+  pb: 'paddingBottom',
+  pl: 'paddingLeft',
+  px: 'paddingHorizontal',
+  py: 'paddingVertical',
 };
 
 const typographyProperties = {
@@ -100,10 +114,10 @@ const textShadowProperties = {
   textShadowRadius: true,
 };
 
-export const backgroundColor = createRestyleFunction({
-  property: 'backgroundColor',
-  themeKey: 'colors',
-});
+const backgroundColorProperties = {
+  backgroundColor: true,
+  bg: 'backgroundColor',
+};
 
 export const color = createRestyleFunction({
   property: 'color',
@@ -120,9 +134,24 @@ export const visible = createRestyleFunction({
   transform: ({value}) => (value === false ? 'none' : 'flex'),
 });
 
+export const backgroundColor = getKeys(backgroundColorProperties).map(
+  property => {
+    const alias = backgroundColorProperties[property];
+
+    return createRestyleFunction({
+      property,
+      styleProperty: typeof alias === 'string' ? alias : undefined,
+      themeKey: 'colors',
+    });
+  },
+);
+
 export const spacing = getKeys(spacingProperties).map(property => {
+  const alias = spacingProperties[property];
+
   return createRestyleFunction({
     property,
+    styleProperty: typeof alias === 'string' ? alias : undefined,
     themeKey: 'spacing',
   });
 });
@@ -196,9 +225,9 @@ export const textShadow = [
 ];
 
 export const all = [
-  backgroundColor,
   color,
   opacity,
+  ...backgroundColor,
   ...spacing,
   ...typography,
   ...layout,
@@ -208,9 +237,6 @@ export const all = [
   ...textShadow,
 ];
 
-export interface BackgroundColorProps<Theme extends BaseTheme> {
-  backgroundColor?: ResponsiveValue<keyof Theme['colors'], Theme>;
-}
 export interface ColorProps<Theme extends BaseTheme> {
   color?: ResponsiveValue<keyof Theme['colors'], Theme>;
 }
@@ -221,6 +247,13 @@ export interface OpacityProps<Theme extends BaseTheme> {
 export interface VisibleProps<Theme extends BaseTheme> {
   visible?: ResponsiveValue<boolean, Theme>;
 }
+
+export type BackgroundColorProps<Theme extends BaseTheme> = {
+  [Key in keyof typeof backgroundColorProperties]?: ResponsiveValue<
+    keyof Theme['colors'],
+    Theme
+  >;
+};
 
 export type SpacingProps<Theme extends BaseTheme> = {
   [Key in keyof typeof spacingProperties]?: ResponsiveValue<
