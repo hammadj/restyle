@@ -1,4 +1,10 @@
-import {ResponsiveValue, BaseTheme, Dimensions, RestyleFunction} from './types';
+import {
+  ResponsiveValue,
+  BaseTheme,
+  Dimensions,
+  RNStyle,
+  RestyleFunctionContainer,
+} from './types';
 import {getKeys} from './typeHelpers';
 
 type PropValue = string | number | undefined | null;
@@ -96,8 +102,7 @@ const createRestyleFunction = <
   Theme extends BaseTheme = BaseTheme,
   TProps extends Record<string, any> = Record<string, any>,
   P extends keyof TProps = keyof TProps,
-  K extends keyof Theme | undefined = undefined,
-  S extends string = string
+  K extends keyof Theme | undefined = undefined
 >({
   property,
   transform,
@@ -106,31 +111,28 @@ const createRestyleFunction = <
 }: {
   property: P;
   transform?: StyleTransformFunction<Theme, K, TProps[P]>;
-  styleProperty?: S;
+  styleProperty?: keyof RNStyle;
   themeKey?: K;
-}) => {
-  const styleProp = styleProperty || (property.toString() as S);
-
-  const func: RestyleFunction<TProps, Theme, S> = (
-    props,
-    {theme, dimensions},
-  ) => {
-    const value = getValue(props[property], {
-      theme,
-      dimensions,
-      themeKey,
-      transform,
-    });
-    return {
-      [styleProp]: value,
-    } as Record<S, typeof value>;
-  };
+}): RestyleFunctionContainer<TProps, Theme, P, K> => {
+  const styleProp = styleProperty || property.toString();
 
   return {
     property,
     themeKey,
     variant: false,
-    func,
+    func: (props, {theme, dimensions}) => {
+      const value = getValue(props[property], {
+        theme,
+        dimensions,
+        themeKey,
+        transform,
+      });
+      if (value === undefined) return {};
+
+      return {
+        [styleProp]: value,
+      };
+    },
   };
 };
 
