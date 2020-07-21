@@ -51,3 +51,10 @@ export type RestyleFunction<
 ) => Record<S, TVal>;
 
 export type RNStyle = ViewStyle | TextStyle | ImageStyle;
+
+export type RNStyleProperty =
+  | keyof ViewStyle
+  | keyof TextStyle
+  | keyof ImageStyle;
+
+export type PropValue = string | number | undefined | null;

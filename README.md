@@ -477,6 +477,53 @@ const theme = createTheme({
 <Box flexDirection={{phone: 'column', tablet: 'row'}} />
 ```
 
+
+If you need to extract the value of a responsive prop in a custom component (e.g. to use it outside of component styles), you can use the `useResponsiveProp` hook:
+
+```tsx
+import {
+  ColorProps,
+  createBox,
+  useResponsiveProp,
+  useTheme,
+} from '@shopify/restyle';
+import React from 'react';
+import { ActivityIndicator, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+
+import Text from './Text';
+import { Theme } from './theme';
+
+const BaseButton = createBox<Theme, TouchableOpacityProps>(TouchableOpacity);
+
+type Props = React.ComponentProps<typeof BaseButton> &
+  ColorProps<Theme> & {
+    label: string;
+    isLoading?: boolean;
+  };
+
+const Button = ({ label, isLoading, color = 'buttonPrimaryForeground', ...props }: Props) => {
+  const theme = useTheme<Theme>();
+
+  const textColorProp = useResponsiveProp(color);
+
+  return (
+    <BaseButton flexDirection="row" {...props}>
+      <Text
+        variant="buttonLabel"
+        color={color}
+        marginRight={isLoading ? 's' : undefined}
+      >
+        {label}
+      </Text>
+      {isLoading ? (
+        <ActivityIndicator color={theme.colors[textColorProp]} />
+      ) : null}
+    </BaseButton>
+  );
+};
+
+```
+
 ### Overriding Styles
 
 Any Restyle component also accepts a regular `style` property and will apply it after all other styles, which means that you can use this to do any overrides that you might find necessary.
