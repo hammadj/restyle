@@ -105,173 +105,18 @@ declare const backgroundColorProperties: {
     backgroundColor: boolean;
     bg: string;
 };
-export declare const color: {
-    property: "color";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-};
-export declare const opacity: {
-    property: "opacity";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-};
-export declare const visible: {
-    property: "visible";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, "display", any>;
-};
-export declare const backgroundColor: {
-    property: "backgroundColor" | "bg";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-}[];
-export declare const spacing: {
-    property: "margin" | "marginTop" | "marginRight" | "marginBottom" | "marginLeft" | "marginHorizontal" | "marginVertical" | "padding" | "paddingTop" | "paddingRight" | "paddingBottom" | "paddingLeft" | "paddingHorizontal" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py";
-    themeKey: "spacing" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-}[];
-export declare const typography: {
-    property: "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textTransform";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-}[];
-export declare const layout: {
-    property: "width" | "minWidth" | "flex" | "height" | "maxWidth" | "minHeight" | "maxHeight" | "overflow" | "aspectRatio" | "alignContent" | "alignItems" | "alignSelf" | "justifyContent" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-}[];
-export declare const position: ({
-    property: "position" | "top" | "right" | "bottom" | "left";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "zIndex";
-    themeKey: "zIndices" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-})[];
-export declare const border: ({
-    property: "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "borderColor" | "borderTopColor" | "borderRightColor" | "borderLeftColor" | "borderBottomColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "borderRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderTopLeftRadius" | "borderTopRightRadius";
-    themeKey: "borderRadii" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-})[];
-export declare const shadow: ({
-    property: "shadowOpacity" | "shadowOffset" | "shadowRadius" | "elevation";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "shadowColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-})[];
-export declare const textShadow: ({
-    property: "textShadowOffset" | "textShadowRadius";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "textShadowColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-})[];
-export declare const all: ({
-    property: "color";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "opacity";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "backgroundColor" | "bg";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "margin" | "marginTop" | "marginRight" | "marginBottom" | "marginLeft" | "marginHorizontal" | "marginVertical" | "padding" | "paddingTop" | "paddingRight" | "paddingBottom" | "paddingLeft" | "paddingHorizontal" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py";
-    themeKey: "spacing" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textTransform";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "width" | "minWidth" | "flex" | "height" | "maxWidth" | "minHeight" | "maxHeight" | "overflow" | "aspectRatio" | "alignContent" | "alignItems" | "alignSelf" | "justifyContent" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "position" | "top" | "right" | "bottom" | "left";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "zIndex";
-    themeKey: "zIndices" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "borderColor" | "borderTopColor" | "borderRightColor" | "borderLeftColor" | "borderBottomColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "borderRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderTopLeftRadius" | "borderTopRightRadius";
-    themeKey: "borderRadii" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "shadowOpacity" | "shadowOffset" | "shadowRadius" | "elevation";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "shadowColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "textShadowOffset" | "textShadowRadius";
-    themeKey: undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-} | {
-    property: "textShadowColor";
-    themeKey: "colors" | undefined;
-    variant: boolean;
-    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, string, any>;
-})[];
+export declare const color: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "color", "colors">;
+export declare const opacity: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "opacity", undefined>;
+export declare const visible: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "visible", undefined>;
+export declare const backgroundColor: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "backgroundColor" | "bg", "colors">[];
+export declare const spacing: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "margin" | "marginBottom" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginTop" | "marginVertical" | "padding" | "paddingBottom" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py", "spacing">[];
+export declare const typography: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textTransform", undefined>[];
+export declare const layout: import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "width" | "minWidth" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "maxHeight" | "maxWidth" | "minHeight" | "overflow", undefined>[];
+export declare const position: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "bottom" | "left" | "position" | "right" | "top", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "zIndex", "zIndices">)[];
+export declare const border: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomColor" | "borderColor" | "borderLeftColor" | "borderRightColor" | "borderTopColor", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderRadius" | "borderTopLeftRadius" | "borderTopRightRadius", "borderRadii">)[];
+export declare const shadow: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "elevation" | "shadowOffset" | "shadowOpacity" | "shadowRadius", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "shadowColor", "colors">)[];
+export declare const textShadow: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "textShadowOffset" | "textShadowRadius", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "textShadowColor", "colors">)[];
+export declare const all: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "color", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "opacity", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "backgroundColor" | "bg", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "margin" | "marginBottom" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginTop" | "marginVertical" | "padding" | "paddingBottom" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py", "spacing"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textTransform", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "width" | "minWidth" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "maxHeight" | "maxWidth" | "minHeight" | "overflow", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "bottom" | "left" | "position" | "right" | "top", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "zIndex", "zIndices"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomColor" | "borderColor" | "borderLeftColor" | "borderRightColor" | "borderTopColor", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderRadius" | "borderTopLeftRadius" | "borderTopRightRadius", "borderRadii"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "elevation" | "shadowOffset" | "shadowOpacity" | "shadowRadius", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "shadowColor", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "textShadowOffset" | "textShadowRadius", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "textShadowColor", "colors">)[];
 export interface ColorProps<Theme extends BaseTheme> {
     color?: ResponsiveValue<keyof Theme['colors'], Theme>;
 }

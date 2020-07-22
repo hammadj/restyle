@@ -30,8 +30,12 @@ export interface RestyleFunctionContainer<TProps extends Record<string, unknown>
     variant: boolean;
     func: RestyleFunction<TProps, Theme>;
 }
-export declare type RestyleFunction<TProps extends Record<string, unknown> = Record<string, unknown>, Theme extends BaseTheme = BaseTheme, S extends string = string, TVal = any> = (props: TProps, context: {
+export declare type RestyleFunction<TProps extends Record<string, unknown> = Record<string, unknown>, Theme extends BaseTheme = BaseTheme, TVal = any> = (props: TProps, context: {
     theme: Theme;
     dimensions: Dimensions;
-}) => Record<S, TVal>;
+}) => {
+    [key in string]?: TVal;
+};
 export declare type RNStyle = ViewStyle | TextStyle | ImageStyle;
+export declare type RNStyleProperty = keyof ViewStyle | keyof TextStyle | keyof ImageStyle;
+export declare type PropValue = string | number | undefined | null;

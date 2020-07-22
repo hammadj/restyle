@@ -1,18 +1,9 @@
-import { BaseTheme, RestyleFunction } from './types';
-declare type StyleTransformFunction<Theme extends BaseTheme, K extends keyof Theme | undefined, TVal> = (params: {
-    value: TVal | null;
-    theme: Theme;
-    themeKey?: K;
-}) => TVal | null;
-declare const createRestyleFunction: <Theme extends BaseTheme = BaseTheme, TProps extends Record<string, any> = Record<string, any>, P extends keyof TProps = keyof TProps, K extends keyof Theme | undefined = undefined, S extends string = string>({ property, transform, styleProperty, themeKey, }: {
+import { BaseTheme, RestyleFunctionContainer } from './types';
+import { StyleTransformFunction } from './responsiveHelpers';
+declare const createRestyleFunction: <Theme extends BaseTheme = BaseTheme, TProps extends Record<string, any> = Record<string, any>, P extends keyof TProps = keyof TProps, K extends keyof Theme | undefined = undefined>({ property, transform, styleProperty, themeKey, }: {
     property: P;
     transform?: StyleTransformFunction<Theme, K, TProps[P]> | undefined;
-    styleProperty?: S | undefined;
+    styleProperty?: "transform" | "width" | "minWidth" | "backfaceVisibility" | "backgroundColor" | "borderBottomColor" | "borderBottomEndRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderBottomStartRadius" | "borderBottomWidth" | "borderColor" | "borderEndColor" | "borderLeftColor" | "borderLeftWidth" | "borderRadius" | "borderRightColor" | "borderRightWidth" | "borderStartColor" | "borderStyle" | "borderTopColor" | "borderTopEndRadius" | "borderTopLeftRadius" | "borderTopRightRadius" | "borderTopStartRadius" | "borderTopWidth" | "borderWidth" | "opacity" | "testID" | "elevation" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "borderEndWidth" | "borderStartWidth" | "bottom" | "display" | "end" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "left" | "margin" | "marginBottom" | "marginEnd" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginStart" | "marginTop" | "marginVertical" | "maxHeight" | "maxWidth" | "minHeight" | "overflow" | "padding" | "paddingBottom" | "paddingEnd" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingStart" | "paddingTop" | "paddingVertical" | "position" | "right" | "start" | "top" | "zIndex" | "direction" | "shadowColor" | "shadowOffset" | "shadowOpacity" | "shadowRadius" | "transformMatrix" | "rotation" | "scaleX" | "scaleY" | "translateX" | "translateY" | "color" | "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textDecorationColor" | "textShadowColor" | "textShadowOffset" | "textShadowRadius" | "fontVariant" | "textTransform" | "writingDirection" | "textAlignVertical" | "includeFontPadding" | "resizeMode" | "overlayColor" | "tintColor" | undefined;
     themeKey?: K | undefined;
-}) => {
-    property: P;
-    themeKey: K | undefined;
-    variant: boolean;
-    func: RestyleFunction<TProps, Theme, S, any>;
-};
+}) => RestyleFunctionContainer<TProps, Theme, P, K>;
 export default createRestyleFunction;

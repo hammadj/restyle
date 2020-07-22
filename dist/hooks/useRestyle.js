@@ -16,6 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var composeRestyleFunctions_1 = __importDefault(require("../composeRestyleFunctions"));
+var typeHelpers_1 = require("../typeHelpers");
 var useDimensions_1 = __importDefault(require("./useDimensions"));
 var useTheme_1 = __importDefault(require("./useTheme"));
 var filterRestyleProps = function (props, omitList) {
@@ -23,7 +24,7 @@ var filterRestyleProps = function (props, omitList) {
         var _a;
         return (__assign(__assign({}, acc), (_a = {}, _a[prop] = true, _a)));
     }, {});
-    return Object.keys(props).reduce(function (acc, key) {
+    return typeHelpers_1.getKeys(props).reduce(function (acc, key) {
         var _a;
         if (omittedProp[key])
             return acc;
