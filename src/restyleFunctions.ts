@@ -1,7 +1,7 @@
 import {TextStyle, FlexStyle, ViewStyle} from 'react-native';
 
 import createRestyleFunction from './createRestyleFunction';
-import {BaseTheme, ResponsiveValue} from './types';
+import {BaseTheme, ResponsiveValue, RNStyleProperty} from './types';
 import {getKeys} from './typeHelpers';
 
 const spacingProperties = {
@@ -140,7 +140,8 @@ export const backgroundColor = getKeys(backgroundColorProperties).map(
 
     return createRestyleFunction({
       property,
-      styleProperty: typeof alias === 'string' ? alias : undefined,
+      styleProperty:
+        typeof alias === 'string' ? (alias as RNStyleProperty) : undefined,
       themeKey: 'colors',
     });
   },
@@ -151,7 +152,8 @@ export const spacing = getKeys(spacingProperties).map(property => {
 
   return createRestyleFunction({
     property,
-    styleProperty: typeof alias === 'string' ? alias : undefined,
+    styleProperty:
+      typeof alias === 'string' ? (alias as RNStyleProperty) : undefined,
     themeKey: 'spacing',
   });
 });
