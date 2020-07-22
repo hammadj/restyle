@@ -27,10 +27,10 @@ function createVariant(_a) {
     });
     var func = function (props, _a) {
         var theme = _a.theme, dimensions = _a.dimensions;
-        var expandedPropss = styleFunction.func(props, { theme: theme, dimensions: dimensions }).expandedPropss;
-        if (!expandedPropss)
+        var expandedProps = styleFunction.func(props, { theme: theme, dimensions: dimensions }).expandedProps;
+        if (!expandedProps)
             return {};
-        return allRestyleFunctions.buildStyle(__assign(__assign({}, defaults), expandedPropss), {
+        return allRestyleFunctions.buildStyle(__assign(__assign({}, defaults), expandedProps), {
             theme: theme,
             dimensions: dimensions,
         });
