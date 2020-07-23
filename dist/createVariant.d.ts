@@ -1,4 +1,4 @@
-import { BaseTheme, RestyleFunctionContainer, ResponsiveValue } from './types';
+import { BaseTheme, ResponsiveValue, RestyleFunctionContainer } from './types';
 import { AllProps } from './restyleFunctions';
 declare function createVariant<Theme extends BaseTheme, K extends keyof Theme = keyof Theme, P extends keyof any = keyof any>(params: {
     property: P;

@@ -3,7 +3,67 @@ import React from 'react';
 import { BaseTheme } from './types';
 import { BackgroundColorProps, OpacityProps, LayoutProps, SpacingProps, BorderProps, ShadowProps, PositionProps, VisibleProps } from './restyleFunctions';
 export declare type BoxProps<Theme extends BaseTheme> = BackgroundColorProps<Theme> & OpacityProps<Theme> & VisibleProps<Theme> & LayoutProps<Theme> & SpacingProps<Theme> & BorderProps<Theme> & ShadowProps<Theme> & PositionProps<Theme>;
-export declare const boxRestyleFunctions: (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "opacity", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "visible", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "backgroundColor" | "bg", "colors">[] | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "margin" | "marginBottom" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginTop" | "marginVertical" | "padding" | "paddingBottom" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py", "spacing">[] | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "width" | "minWidth" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "maxHeight" | "maxWidth" | "minHeight" | "overflow", undefined>[] | (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "bottom" | "left" | "position" | "right" | "top", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "zIndex", "zIndices">)[] | (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomColor" | "borderColor" | "borderLeftColor" | "borderRightColor" | "borderTopColor", "colors"> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderRadius" | "borderTopLeftRadius" | "borderTopRightRadius", "borderRadii">)[] | (import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "elevation" | "shadowOffset" | "shadowOpacity" | "shadowRadius", undefined> | import("./types").RestyleFunctionContainer<Record<string, any>, BaseTheme, "shadowColor", "colors">)[])[];
+export declare const boxRestyleFunctions: ({
+    property: "opacity";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+} | {
+    property: "visible";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, "display" | "visible", any>;
+} | {
+    property: "backgroundColor" | "bg";
+    themeKey: "colors" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, "transform" | "width" | "minWidth" | "backfaceVisibility" | "backgroundColor" | "borderBottomColor" | "borderBottomEndRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderBottomStartRadius" | "borderBottomWidth" | "borderColor" | "borderEndColor" | "borderLeftColor" | "borderLeftWidth" | "borderRadius" | "borderRightColor" | "borderRightWidth" | "borderStartColor" | "borderStyle" | "borderTopColor" | "borderTopEndRadius" | "borderTopLeftRadius" | "borderTopRightRadius" | "borderTopStartRadius" | "borderTopWidth" | "borderWidth" | "opacity" | "testID" | "elevation" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "borderEndWidth" | "borderStartWidth" | "bottom" | "display" | "end" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "left" | "margin" | "marginBottom" | "marginEnd" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginStart" | "marginTop" | "marginVertical" | "maxHeight" | "maxWidth" | "minHeight" | "overflow" | "padding" | "paddingBottom" | "paddingEnd" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingStart" | "paddingTop" | "paddingVertical" | "position" | "right" | "start" | "top" | "zIndex" | "direction" | "shadowColor" | "shadowOffset" | "shadowOpacity" | "shadowRadius" | "transformMatrix" | "rotation" | "scaleX" | "scaleY" | "translateX" | "translateY" | "color" | "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textDecorationColor" | "textShadowColor" | "textShadowOffset" | "textShadowRadius" | "fontVariant" | "textTransform" | "writingDirection" | "textAlignVertical" | "includeFontPadding" | "resizeMode" | "overlayColor" | "tintColor" | "bg", any>;
+}[] | {
+    property: "margin" | "marginBottom" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginTop" | "marginVertical" | "padding" | "paddingBottom" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingVertical" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py";
+    themeKey: "spacing" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, "transform" | "width" | "minWidth" | "backfaceVisibility" | "backgroundColor" | "borderBottomColor" | "borderBottomEndRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderBottomStartRadius" | "borderBottomWidth" | "borderColor" | "borderEndColor" | "borderLeftColor" | "borderLeftWidth" | "borderRadius" | "borderRightColor" | "borderRightWidth" | "borderStartColor" | "borderStyle" | "borderTopColor" | "borderTopEndRadius" | "borderTopLeftRadius" | "borderTopRightRadius" | "borderTopStartRadius" | "borderTopWidth" | "borderWidth" | "opacity" | "testID" | "elevation" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "borderEndWidth" | "borderStartWidth" | "bottom" | "display" | "end" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "left" | "margin" | "marginBottom" | "marginEnd" | "marginHorizontal" | "marginLeft" | "marginRight" | "marginStart" | "marginTop" | "marginVertical" | "maxHeight" | "maxWidth" | "minHeight" | "overflow" | "padding" | "paddingBottom" | "paddingEnd" | "paddingHorizontal" | "paddingLeft" | "paddingRight" | "paddingStart" | "paddingTop" | "paddingVertical" | "position" | "right" | "start" | "top" | "zIndex" | "direction" | "shadowColor" | "shadowOffset" | "shadowOpacity" | "shadowRadius" | "transformMatrix" | "rotation" | "scaleX" | "scaleY" | "translateX" | "translateY" | "color" | "fontFamily" | "fontSize" | "fontStyle" | "fontWeight" | "letterSpacing" | "lineHeight" | "textAlign" | "textDecorationLine" | "textDecorationStyle" | "textDecorationColor" | "textShadowColor" | "textShadowOffset" | "textShadowRadius" | "fontVariant" | "textTransform" | "writingDirection" | "textAlignVertical" | "includeFontPadding" | "resizeMode" | "overlayColor" | "tintColor" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "p" | "pt" | "pr" | "pb" | "pl" | "px" | "py", any>;
+}[] | {
+    property: "width" | "minWidth" | "alignContent" | "alignItems" | "alignSelf" | "aspectRatio" | "flex" | "flexBasis" | "flexDirection" | "flexGrow" | "flexShrink" | "flexWrap" | "height" | "justifyContent" | "maxHeight" | "maxWidth" | "minHeight" | "overflow";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+}[] | ({
+    property: "bottom" | "left" | "position" | "right" | "top";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+} | {
+    property: "zIndex";
+    themeKey: "zIndices" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+})[] | ({
+    property: "borderBottomWidth" | "borderLeftWidth" | "borderRightWidth" | "borderStyle" | "borderTopWidth" | "borderWidth";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+} | {
+    property: "borderBottomColor" | "borderColor" | "borderLeftColor" | "borderRightColor" | "borderTopColor";
+    themeKey: "colors" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+} | {
+    property: "borderBottomLeftRadius" | "borderBottomRightRadius" | "borderRadius" | "borderTopLeftRadius" | "borderTopRightRadius";
+    themeKey: "borderRadii" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+})[] | ({
+    property: "elevation" | "shadowOffset" | "shadowOpacity" | "shadowRadius";
+    themeKey: undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+} | {
+    property: "shadowColor";
+    themeKey: "colors" | undefined;
+    variant: boolean;
+    func: import("./types").RestyleFunction<Record<string, any>, BaseTheme, import("./types").RNStyleProperty, any>;
+})[])[];
 declare const createBox: <Theme extends BaseTheme, Props = import("react-native").ViewProps & {
     children?: React.ReactNode;
 }>(BaseComponent?: React.ComponentType<any>) => ((props: {

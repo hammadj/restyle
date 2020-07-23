@@ -22,12 +22,11 @@ function createVariant(_a) {
     var _b = _a.property, property = _b === void 0 ? 'variant' : _b, themeKey = _a.themeKey, _c = _a.defaults, defaults = _c === void 0 ? {} : _c;
     var styleFunction = createRestyleFunction_1.default({
         property: property,
-        styleProperty: 'expandedProps',
         themeKey: themeKey,
     });
     var func = function (props, _a) {
         var theme = _a.theme, dimensions = _a.dimensions;
-        var expandedProps = styleFunction.func(props, { theme: theme, dimensions: dimensions }).expandedProps;
+        var expandedProps = styleFunction.func(props, { theme: theme, dimensions: dimensions })[property];
         if (!expandedProps)
             return {};
         return allRestyleFunctions.buildStyle(__assign(__assign({}, defaults), expandedProps), {
